@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/defcol"
+    android:layout_marginTop="50dp">
+
+    <!-- STATUS BAR SPACER -->
+
+    <!-- SIMPLE APP BAR -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/defcol"
+        android:title="MediCare"
+
+        android:titleTextColor="#FFFFFF"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+    <!-- CONTENT -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:title="MediCare"
+        android:titleTextColor="@color/primaryGreen"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        app:navigationIconTint="@color/primaryGreen"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+
+</LinearLayout>
