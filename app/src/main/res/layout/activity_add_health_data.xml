@@ -1,15 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgLight">
+    android:background="@color/bgLight"
+    android:padding="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Health Data"
-        android:textSize="22sp"
-        android:textColor="@color/textDark"
-        android:layout_margin="24dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Health Data"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/textDark"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Weight -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weight (kg)"
+            android:textColor="@color/textDark"/>
+
+        <EditText
+            android:id="@+id/etWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Height -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Height (cm)"
+            android:textColor="@color/textDark"/>
+
+        <EditText
+            android:id="@+id/etHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Blood Pressure -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blood Pressure (120/80)"
+            android:textColor="@color/textDark"/>
+
+        <EditText
+            android:id="@+id/etBP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Blood Sugar -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blood Sugar (mg/dL)"
+            android:textColor="@color/textDark"/>
+
+        <EditText
+            android:id="@+id/etSugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Heart Rate -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Heart Rate (bpm)"
+            android:textColor="@color/textDark"/>
+
+        <EditText
+            android:id="@+id/etHeart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Steps -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Steps Walked"
+            android:textColor="@color/textDark"/>
+
+        <EditText
+            android:id="@+id/etSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Submit -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Data"
+            android:backgroundTint="@color/primaryGreen"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+</ScrollView>

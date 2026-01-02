@@ -3,7 +3,6 @@ package com.example.medicare.ui
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import com.example.medicare.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -11,6 +10,14 @@ class DashboardActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 🔐 Session check (important)
+        if (FirebaseAuth.getInstance().currentUser == null) {
+            startActivity(Intent(this, LoginRegisterActivity::class.java))
+            finish()
+            return
+        }
+
         setContentView(R.layout.activity_dashboard)
 
         val btnEmergency = findViewById<Button>(R.id.btnEmergency)
@@ -18,14 +25,11 @@ class DashboardActivity : BaseActivity() {
         val btnLogout = findViewById<Button>(R.id.btnLogout)
 
         btnEmergency.setOnClickListener {
-            // Placeholder (we'll add real logic later)
-            val intent = Intent(this, EmergencyActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, EmergencyActivity::class.java))
         }
 
         btnAddData.setOnClickListener {
-            val intent = Intent(this, AddHealthDataActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, AddHealthDataActivity::class.java))
         }
 
         btnLogout.setOnClickListener {

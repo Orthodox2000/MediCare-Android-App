@@ -77,7 +77,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/welcomeContainer"
         app:layout_constraintVertical_bias="0.796" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -96,8 +95,8 @@
         android:layout_height="254dp"
         android:scaleType="fitXY"
         android:src="@drawable/semi_circular_background"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="-12dp" />
+        tools:layout_editor_absoluteX="-33dp"
+        tools:layout_editor_absoluteY="-5dp" />
 
     <TextView
         android:id="@+id/tvWelcome"

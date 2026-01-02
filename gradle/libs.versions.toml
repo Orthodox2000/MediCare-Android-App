@@ -11,6 +11,8 @@ activity = "1.12.2"
 constraintlayout = "2.2.1"
 volley = "1.2.1"
 googleServices = "4.4.0"
+okhttp = "4.12.0"
+
 
 
 [libraries]
@@ -25,7 +27,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx", version = "23.2.1" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version = "21.0.0" }
-
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

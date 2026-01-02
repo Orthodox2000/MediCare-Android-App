@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bgDark">#0B0F0E</color>
+    <color name="primaryGreen">#00FF88</color>
+    <color name="textLight">#E5E7EB</color>
+    <!-- Brand -->
+    <color name="primaryBlue">#2563EB</color>   <!-- Tailwind blue-600 -->
+    <color name="secondaryBlue">#3B82F6</color> <!-- blue-500 -->
+
+    <!-- Backgrounds -->
+    <color name="bgLight">#F8FAFC</color>        <!-- slate-50 -->
+    <color name="cardWhite">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="textDark">#0F172A</color>       <!-- slate-900 -->
+    <color name="textMuted">#64748B</color>     <!-- slate-500 -->
+    <color name="textHint">#9CA3AF</color> <!-- Tailwind gray-400 -->
+
+
+    <!-- Status -->
+    <color name="successGreen">#22C55E</color>
+    <color name="warningAmber">#F59E0B</color>
+    <color name="defcol">#6D28D9</color>
+
+    <color name="border">#D1D5DB</color>
+
+</resources>
