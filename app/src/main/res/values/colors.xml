@@ -21,7 +21,7 @@
     <!-- Status -->
     <color name="successGreen">#22C55E</color>
     <color name="warningAmber">#F59E0B</color>
-    <color name="defcol">#6D28D9</color>
+    <color name="defcol">#FFFFFF</color>
 
     <color name="border">#D1D5DB</color>
 

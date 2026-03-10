@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val token = prefs.getString("token", null)
 
         if (token.isNullOrEmpty()) {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, LoginRegisterActivity::class.java))
         } else {
             startActivity(Intent(this, DashboardActivity::class.java))
         }

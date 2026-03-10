@@ -1,76 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgDark">
+    android:background="@color/bgLight"
+    android:padding="24dp">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primaryGreen"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="24dp"/>
+        android:orientation="vertical">
 
-    <!-- Email -->
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/textLight"
-        android:textColorHint="@color/textLight"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
-        android:layout_marginHorizontal="24dp"/>
+        <!-- Title -->
 
-    <!-- Password -->
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="@color/textLight"
-        android:textColorHint="@color/textLight"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="24dp"/>
+        <!-- Full Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Sign Up"
+            android:textColor="@color/textDark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:backgroundTint="@color/primaryGreen"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="24dp"/>
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="12dp" />
 
-    <!-- Go to Login -->
-    <TextView
-        android:id="@+id/tvLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Already have an account? Login"
-        android:textColor="@color/primaryGreen"
-        app:layout_constraintTop_toBottomOf="@id/btnRegister"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp"/>
+        <!-- Phone -->
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="+91 Phone Number"
+            android:inputType="phone"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="12dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Send OTP -->
+        <Button
+            android:id="@+id/btnSendOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send OTP to Verify"
+            android:textColor="@android:color/black"
+            android:backgroundTint="@color/primaryGreen"
+            android:layout_marginBottom="12dp" />
+
+        <!-- OTP -->
+        <EditText
+            android:id="@+id/etOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter OTP"
+            android:inputType="number"
+            android:visibility="gone"
+            android:textColor="@color/textDark"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Verify -->
+        <Button
+            android:id="@+id/btnVerifyOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify and Register"
+            android:visibility="gone"
+            android:textColor="@android:color/black"
+            android:backgroundTint="@color/primaryGreen"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Google -->
+        <Button
+            android:id="@+id/btnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue with Google" />
+
+    </LinearLayout>
+</ScrollView>
