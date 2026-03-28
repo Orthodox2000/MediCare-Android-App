@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgLight"
@@ -10,7 +9,7 @@
     <ImageView
         android:id="@+id/ivHeaderBg"
         android:layout_width="0dp"
-        android:layout_height="240dp"
+        android:layout_height="220dp"
         android:scaleType="fitXY"
         android:src="@drawable/semi_circular_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,16 +21,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Welcome to MediCare"
+        android:text="Verify your phone"
         android:textColor="@color/textOnPrimary"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardAuth"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -49,70 +47,55 @@
             android:padding="18dp">
 
             <TextView
-                android:id="@+id/tvSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
-                android:text="Sign in to continue"
+                android:text="We'll send an OTP to confirm it's you."
                 android:textColor="@color/textMuted"
                 android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilName"
                 style="@style/Widget.MediCare.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:hint="Full name"
+                android:hint="+91 Phone number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:textColor="@color/textDark" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSendOtp"
+                style="@style/Widget.MediCare.Button.Primary"
+                android:text="Send OTP" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilOtp"
+                style="@style/Widget.MediCare.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Enter OTP"
                 android:visibility="gone">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etName"
+                    android:id="@+id/etOtp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/textDark" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MediCare.TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:hint="Email">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/textDark" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MediCare.TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="Password (min 6 chars)">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    android:inputType="number"
                     android:textColor="@color/textDark" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAction"
+                android:id="@+id/btnVerifyOtp"
                 style="@style/Widget.MediCare.Button.Primary"
-                android:text="Login" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnGoogleLogin"
-                style="@style/Widget.MediCare.Button.Outlined"
-                android:text="Continue with Google" />
+                android:text="@string/verify_and_continue"
+                android:visibility="gone" />
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:id="@+id/progressLoader"
@@ -123,27 +106,6 @@
                 android:indeterminate="true"
                 android:visibility="gone"
                 app:indicatorColor="@color/primary" />
-
-            <TextView
-                android:id="@+id/tvAuthStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:textColor="@color/textMuted"
-                android:textSize="13sp"
-                android:visibility="gone"
-                tools:text="Checking Google account..." />
-
-            <TextView
-                android:id="@+id/tvToggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="New here? Create account"
-                android:textColor="@color/primary"
-                android:textStyle="bold" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

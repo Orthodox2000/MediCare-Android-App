@@ -33,7 +33,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".ui.RegisterActivity"
+            android:name=".ui.PhoneVerificationActivity"
             android:exported="false" />
 
         <!-- Main Screens -->

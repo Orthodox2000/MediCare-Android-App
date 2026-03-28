@@ -1,6 +1,7 @@
 *.iml
 .gradle
 /local.properties
+local.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -12,4 +13,59 @@
 /captures
 .externalNativeBuild
 .cxx
-local.properties
+
+# Android/Gradle outputs
+**/build/
+app/release/
+app/debug/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.hprof
+
+# Signing keys / sensitive local credentials
+*.jks
+*.keystore
+*.p12
+key.properties
+secrets.properties
+
+# Firebase local config (do not commit personal project config)
+app/google-services.json
+
+# Local Android/IDE state
+.idea/
+/.kotlin/
+.android/
+.gradle-user/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment and secret files
+.env
+.env.*
+*.env
+*.secret
+*.secrets
+*.pem
+*.crt
+*.key
+*.p8
+
+# Firebase / Google credentials (Android + backend tooling)
+google-services.json
+GoogleService-Info.plist
+serviceAccountKey.json
+firebase-adminsdk*.json
+
+# Common local config/state files
+*.db
+*.sqlite
+*.sqlite3
+Thumbs.db
+Desktop.ini

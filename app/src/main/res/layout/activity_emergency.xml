@@ -1,109 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="@color/bgLight"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Emergency Services"
-            android:textSize="26sp"
+            android:textColor="@color/dangerRed"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#E53935"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quick access to emergency contacts"
-            android:textColor="#555"
-            android:layout_marginBottom="20dp"/>
+            android:textColor="@color/textMuted"
+            android:layout_marginBottom="16dp" />
 
-        <!-- Emergency Contacts -->
-
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn112"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🚑 Emergency Ambulance - 112"
-            android:layout_marginBottom="12dp"/>
+            style="@style/Widget.MediCare.Button.Outlined"
+            android:text="Ambulance - 112" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPoison"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="☠ Poison Control - 1-800-222-1222"
-            android:layout_marginBottom="12dp"/>
+            style="@style/Widget.MediCare.Button.Outlined"
+            android:text="Poison Control - 1-800-222-1222" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMental"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="💬 Mental Health Crisis - 988"
-            android:layout_marginBottom="12dp"/>
+            style="@style/Widget.MediCare.Button.Outlined"
+            android:text="Mental Health Crisis - 988" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHospital"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🏥 Nearest Hospital"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- First Aid Section -->
+            style="@style/Widget.MediCare.Button.Outlined"
+            android:text="Nearest Hospital" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First Aid Quick Reference"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="First aid quick tips"
+            android:textColor="@color/textDark"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="❤️ CPR: Push hard and fast in center of chest"
-            android:layout_marginBottom="6dp"/>
+            android:text="CPR: Push hard and fast in the center of the chest."
+            android:textColor="@color/textMuted"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🫁 Choking: Perform Heimlich maneuver"
-            android:layout_marginBottom="6dp"/>
+            android:text="Choking: Perform the Heimlich maneuver."
+            android:textColor="@color/textMuted"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🩸 Bleeding: Apply firm pressure"
-            android:layout_marginBottom="6dp"/>
+            android:text="Bleeding: Apply firm pressure."
+            android:textColor="@color/textMuted"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🔥 Burns: Cool with running water 10 mins"
-            android:layout_marginBottom="24dp"/>
+            android:text="Burns: Cool with running water for 10 minutes."
+            android:textColor="@color/textMuted"
+            android:layout_marginBottom="18dp" />
 
-        <!-- Big Emergency Button -->
-
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCallEmergency"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CALL 112 NOW"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:backgroundTint="#E53935"
-            android:textColor="#FFFFFF"
-            android:padding="16dp"/>
+            style="@style/Widget.MediCare.Button.Primary"
+            android:backgroundTint="@color/dangerRed"
+            android:text="Call 112 now" />
 
     </LinearLayout>
-
 </ScrollView>
+

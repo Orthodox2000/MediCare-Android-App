@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="InputStyle">
+    <style name="Widget.MediCare.Button.Primary" parent="Widget.Material3.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">12dp</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:textColor">@color/textLight</item>
-        <item name="android:textColorHint">@color/textHint</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/textOnPrimary</item>
+    </style>
+
+    <style name="Widget.MediCare.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="android:textColor">@color/textDark</item>
+    </style>
+
+    <style name="Widget.MediCare.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxStrokeColor">@color/border</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="hintTextColor">@color/textHint</item>
     </style>
 
 </resources>

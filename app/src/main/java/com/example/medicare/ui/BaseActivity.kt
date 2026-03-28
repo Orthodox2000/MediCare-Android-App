@@ -21,8 +21,8 @@ open class BaseActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         if (toolbar != null) {
             setSupportActionBar(toolbar)
-            toolbar.setTitleTextColor(getColor(R.color.cardWhite))
-            toolbar.overflowIcon?.setTint(getColor(R.color.cardWhite))
+            toolbar.setTitleTextColor(getColor(R.color.textOnPrimary))
+            toolbar.overflowIcon?.setTint(getColor(R.color.textOnPrimary))
         }
     }
 
@@ -33,7 +33,7 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         for (i in 0 until menu.size()) {
-            menu.getItem(i).icon?.setTint(getColor(R.color.primaryGreen))
+            menu.getItem(i).icon?.setTint(getColor(R.color.textOnPrimary))
         }
         return super.onPrepareOptionsMenu(menu)
     }

@@ -7,14 +7,12 @@
         android:id="@+id/menu_home"
         android:title="Home"
         android:icon="@drawable/ic_home"
-        android:iconTint="#FFFFFF"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/menu_emergency"
         android:title="Emergency"
         android:icon="@android:drawable/ic_menu_call"
-        android:iconTint="#FFFFFF"
         app:showAsAction="always" />
 
 </menu>

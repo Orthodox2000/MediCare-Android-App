@@ -1,71 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgLight"
-    android:padding="20dp">
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Weight -->
-        <EditText
-            android:id="@+id/etWeight"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Add health metrics"
+            android:textColor="@color/textDark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MediCare.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Weight (kg)"
-            android:inputType="numberDecimal"
-            android:background="@drawable/input_bg"
-            android:textColor="@color/textDark"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Weight (kg)">
 
-        <!-- Height -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textColor="@color/textDark" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Blood Pressure -->
-        <EditText
-            android:id="@+id/etBP"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MediCare.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Blood Pressure (120/80)"
-            android:inputType="text"
-            android:background="@drawable/input_bg"
-            android:textColor="@color/textDark"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Blood Pressure (e.g. 120)">
 
-        <!-- Blood Sugar -->
-        <EditText
-            android:id="@+id/etSugar"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etBP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/textDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MediCare.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Blood Sugar (mg/dL)"
-            android:inputType="number"
-            android:background="@drawable/input_bg"
-            android:textColor="@color/textDark"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="12dp"
+            android:hint="Blood Sugar (mg/dL)">
 
-        <!-- Heart Rate -->
-        <EditText
-            android:id="@+id/etHeart"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/textDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MediCare.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Heart Rate (bpm)"
-            android:inputType="number"
-            android:background="@drawable/input_bg"
-            android:textColor="@color/textDark"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:hint="Heart Rate (bpm)">
 
-        <!-- Steps -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHeart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/textDark" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Submit Button -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Data"
-            android:backgroundTint="@color/primaryGreen"
-            android:textColor="@android:color/black"/>
+            style="@style/Widget.MediCare.Button.Primary"
+            android:text="Save" />
 
     </LinearLayout>
 </ScrollView>
+

@@ -1,23 +1,28 @@
 package com.example.medicare.ui
 
-import android.os.Build
 import android.os.Bundle
-import android.widget.*
-import androidx.annotation.RequiresApi
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import com.example.medicare.R
+import com.example.medicare.data.Api
 import com.google.firebase.auth.FirebaseAuth
-import okhttp3.*
+import okhttp3.Call
+import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
-import java.time.LocalDate
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class AddHealthDataActivity : BaseActivity() {
 
-    private val client = OkHttpClient()
+    private val jsonMediaType = "application/json".toMediaType()
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_health_data)
@@ -29,20 +34,16 @@ class AddHealthDataActivity : BaseActivity() {
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
 
         btnSubmit.setOnClickListener {
-
-            // 🔹 Read as String first
             val weightStr = etWeight.text.toString().trim()
             val bpStr = etBP.text.toString().trim()
             val sugarStr = etSugar.text.toString().trim()
             val heartStr = etHeart.text.toString().trim()
 
-            // 🔹 Basic validation
             if (weightStr.isEmpty() || sugarStr.isEmpty()) {
                 Toast.makeText(this, "Please fill required fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // 🔹 SAFE conversion (prevents crash)
             val weight = weightStr.toIntOrNull()
             val sugar = sugarStr.toIntOrNull()
             val heartRate = heartStr.toIntOrNull() ?: 0
@@ -62,14 +63,12 @@ class AddHealthDataActivity : BaseActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun sendToApi(
         weight: Int,
         bloodPressure: Int,
         sugar: Int,
         heartRate: Int
     ) {
-
         val user = FirebaseAuth.getInstance().currentUser
         val email = user?.email
 
@@ -78,53 +77,40 @@ class AddHealthDataActivity : BaseActivity() {
             return
         }
 
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+
         val json = JSONObject().apply {
-            put("userId", email)                 // ✅ REAL LOGGED-IN EMAIL
-            put("date", LocalDate.now().toString())
+            put("userId", email)
+            put("date", today)
             put("weight", weight)
             put("bloodPressure", bloodPressure)
             put("sugar", sugar)
             put("heartRate", heartRate)
         }
 
-        val body = json.toString()
-            .toRequestBody("application/json".toMediaType())
-
         val request = Request.Builder()
             .url("https://medi-care-roan.vercel.app/api/health/add")
-            .post(body)
+            .post(json.toString().toRequestBody(jsonMediaType))
             .build()
 
-        client.newCall(request).enqueue(object : Callback {
-
+        Api.http.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                runOnUiThread {
-                    Toast.makeText(
-                        this@AddHealthDataActivity,
-                        "Network error",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+                runOnUiThread { Toast.makeText(this@AddHealthDataActivity, "Network error", Toast.LENGTH_SHORT).show() }
             }
 
             override fun onResponse(call: Call, response: Response) {
-                runOnUiThread {
-                    if (response.isSuccessful) {
-                        Toast.makeText(
-                            this@AddHealthDataActivity,
-                            "Health data saved ✔",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        finish()
-                    } else {
-                        Toast.makeText(
-                            this@AddHealthDataActivity,
-                            "Server error",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                response.use {
+                    runOnUiThread {
+                        if (response.isSuccessful) {
+                            Toast.makeText(this@AddHealthDataActivity, "Health data saved", Toast.LENGTH_SHORT).show()
+                            finish()
+                        } else {
+                            Toast.makeText(this@AddHealthDataActivity, "Server error", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
             }
         })
     }
 }
+

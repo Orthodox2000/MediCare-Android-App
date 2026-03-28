@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/defcol"
-    android:textColor="@color/textLight"
-    android:layout_marginTop="50dp">
+    android:background="@color/bgLight"
+    android:fitsSystemWindows="true">
 
-
-    <!-- TOP APP BAR (ONLY ONE TOOLBAR) -->
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#6c3baa"
-        android:textColor="@color/textLight"
-        android:title="MediCare"
-        android:titleTextColor="#ffffff" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_gradient">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/toolbar_gradient"
+            android:title="MediCare"
+            android:titleTextColor="@color/textOnPrimary"
+            app:navigationIconTint="@color/textOnPrimary"
+            app:popupTheme="@style/ThemeOverlay.Material3.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
         android:id="@+id/contentContainer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#FFFFFF"/>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
